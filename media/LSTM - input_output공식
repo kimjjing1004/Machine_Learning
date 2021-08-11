@@ -1,0 +1,10 @@
+params = 4 * ((size_of_input + 1) * size_of_output + size_of_output^2)
+
+model = Sequential()
+model.add(Embedding(1000, 100))
+model.add(LSTM(100, activation='tanh'))
+model.add(Dense(46, activation='softmax'))
+
+input 100 <== Embedding 레이어에서 100으로
+output 100 <== LSTM 첫번째 인자
+4 * ((100 + 1) * 100 + 100^2) = 80,400
